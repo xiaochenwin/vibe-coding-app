@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成就系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .tab-bar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+        }
+        .badge-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+        .badge-silver {
+            background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 100%);
+        }
+        .badge-bronze {
+            background: linear-gradient(135deg, #d97706 0%, #92400e 100%);
+        }
+        .badge-locked {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+        }
+        .certificate-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex flex-col h-screen">
+        <!-- 头部 -->
+        <div class="gradient-bg text-white p-6 pb-8">
+            <div class="flex items-center justify-between mb-4">
+                <h1 class="text-2xl font-bold">我的成就 🏆</h1>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-share-alt text-white text-lg"></i>
+                </div>
+            </div>
+            
+            <!-- 成就统计 -->
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-white bg-opacity-10 rounded-2xl p-3 backdrop-blur-sm text-center">
+                    <p class="text-2xl font-bold">12</p>
+                    <p class="text-xs text-blue-100">获得徽章</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-2xl p-3 backdrop-blur-sm text-center">
+                    <p class="text-2xl font-bold">5</p>
+                    <p class="text-xs text-blue-100">完成证书</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-2xl p-3 backdrop-blur-sm text-center">
+                    <p class="text-2xl font-bold">7</p>
+                    <p class="text-xs text-blue-100">连续天数</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 标签切换 -->
+        <div class="bg-white px-6 py-4">
+            <div class="flex space-x-1 bg-gray-100 rounded-xl p-1">
+                <button class="flex-1 py-2 px-4 rounded-lg bg-blue-500 text-white text-sm font-medium">徽章</button>
+                <button class="flex-1 py-2 px-4 rounded-lg text-gray-600 text-sm font-medium">证书</button>
+                <button class="flex-1 py-2 px-4 rounded-lg text-gray-600 text-sm font-medium">统计</button>
+            </div>
+        </div>
+
+        <!-- 徽章内容 -->
+        <div class="flex-1 p-6 pb-24 overflow-y-auto">
+            <!-- 最新获得 -->
+            <div class="mb-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">🎉 最新获得</h2>
+                <div class="bg-white rounded-2xl p-4 card-shadow pulse-animation">
+                    <div class="flex items-center">
+                        <div class="w-16 h-16 badge-gold rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-fire text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800">连续学习一周</h3>
+                            <p class="text-gray-500 text-sm">坚持连续学习7天，养成良好习惯！</p>
+                            <p class="text-xs text-orange-500 mt-1">刚刚获得</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-star text-orange-500 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 章节完成徽章 -->
+            <div class="mb-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">📚 章节完成</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- 已获得的徽章 -->
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="text-center">
+                            <div class="w-12 h-12 badge-gold rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-sm">第1章完成</h4>
+                            <p class="text-xs text-gray-500">基础概念</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="text-center">
+                            <div class="w-12 h-12 badge-gold rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-sm">第2章完成</h4>
+                            <p class="text-xs text-gray-500">数字视频</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="text-center">
+                            <div class="w-12 h-12 badge-gold rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-sm">第3章完成</h4>
+                            <p class="text-xs text-gray-500">压缩原理</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="text-center">
+                            <div class="w-12 h-12 badge-gold rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-bold">4</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-sm">第4章完成</h4>
+                            <p class="text-xs text-gray-500">H.264标准</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="text-center">
+                            <div class="w-12 h-12 badge-gold rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-bold">5</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-sm">第5章完成</h4>
+                            <p class="text-xs text-gray-500">H.265标准</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 未获得的徽章 -->
+                    <div class="bg-white rounded-2xl p-4 card-shadow opacity-50">
+                        <div class="text-center">
+                            <div class="w-12 h-12 badge-locked rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-lock text-white text-sm"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-sm">第6章完成</h4>
+                            <p class="text-xs text-gray-500">VP9 & AV1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 里程碑徽章 -->
+            <div class="mb-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">🎯 里程碑</h2>
+                <div class="space-y-3">
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 badge-silver rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800">初学者</h4>
+                                <p class="text-gray-500 text-sm">完成前3章学习</p>
+                            </div>
+                            <i class="fas fa-check-circle text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 badge-bronze rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-medal text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800">进阶学习者</h4>
+                                <p class="text-gray-500 text-sm">完成前5章学习</p>
+                            </div>
+                            <i class="fas fa-check-circle text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-4 card-shadow opacity-50">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 badge-locked rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-crown text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800">专家级</h4>
+                                <p class="text-gray-500 text-sm">完成前10章学习</p>
+                                <div class="w-full bg-gray-200 rounded-full h-1.5 mt-2">
+                                    <div class="bg-blue-500 h-1.5 rounded-full" style="width: 50%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">5/10 章节</p>
+                            </div>
+                            <i class="fas fa-lock text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 学习习惯徽章 -->
+            <div class="mb-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">🔥 学习习惯</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="text-center">
+                            <div class="w-12 h-12 badge-gold rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-fire text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-sm">连续7天</h4>
+                            <p class="text-xs text-gray-500">学习达人</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-4 card-shadow opacity-50">
+                        <div class="text-center">
+                            <div class="w-12 h-12 badge-locked rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-calendar text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 text-sm">连续30天</h4>
+                            <p class="text-xs text-gray-500">坚持不懈</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 safe-area-bottom">
+            <div class="grid grid-cols-4 h-40 py-4">
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-home text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">首页</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-book text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">章节</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-trophy text-blue-600 text-2xl"></i>
+                    <span class="text-sm text-blue-600 font-medium">成就</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-user text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">我的</span>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+</body>
+</html>

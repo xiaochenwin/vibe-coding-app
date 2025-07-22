@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的证书</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .certificate-bg {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 3px solid #f59e0b;
+        }
+        .certificate-shadow {
+            box-shadow: 0 8px 32px rgba(245, 158, 11, 0.3);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .tab-bar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+        }
+        .seal {
+            background: radial-gradient(circle, #f59e0b 0%, #d97706 100%);
+        }
+        .ribbon {
+            background: linear-gradient(45deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .certificate-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, #fbbf24 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #fbbf24 2px, transparent 2px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex flex-col h-screen">
+        <!-- 头部 -->
+        <div class="gradient-bg text-white p-6 pb-8">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <button class="mr-4">
+                        <i class="fas fa-arrow-left text-white text-xl"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold">我的证书 📜</h1>
+                </div>
+                <button class="p-2">
+                    <i class="fas fa-share-alt text-white text-lg"></i>
+                </button>
+            </div>
+            
+            <!-- 证书统计 -->
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-white bg-opacity-10 rounded-2xl p-3 backdrop-blur-sm text-center">
+                    <p class="text-2xl font-bold">5</p>
+                    <p class="text-xs text-blue-100">章节证书</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-2xl p-3 backdrop-blur-sm text-center">
+                    <p class="text-2xl font-bold">1</p>
+                    <p class="text-xs text-blue-100">完成证书</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-2xl p-3 backdrop-blur-sm text-center">
+                    <p class="text-2xl font-bold">38%</p>
+                    <p class="text-xs text-blue-100">总进度</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 最新证书展示 -->
+        <div class="p-6">
+            <h2 class="text-lg font-bold text-gray-800 mb-4">🎉 最新获得</h2>
+            <div class="certificate-bg rounded-3xl p-6 certificate-shadow relative overflow-hidden">
+                <!-- 装饰图案 -->
+                <div class="absolute inset-0 certificate-pattern"></div>
+                
+                <!-- 证书内容 -->
+                <div class="relative z-10">
+                    <!-- 证书头部 -->
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 seal rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-award text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">学习证书</h3>
+                        <div class="w-24 h-1 bg-yellow-600 mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <!-- 证书正文 -->
+                    <div class="text-center mb-6">
+                        <p class="text-gray-700 mb-2">特此证明</p>
+                        <p class="text-xl font-bold text-gray-800 mb-4">学习者</p>
+                        <p class="text-gray-700 mb-2">已成功完成</p>
+                        <p class="text-lg font-semibold text-blue-700 mb-4">第5章：H.265/HEVC 标准详解</p>
+                        <p class="text-gray-700 text-sm">完成时间：2024年1月15日</p>
+                    </div>
+                    
+                    <!-- 证书底部 -->
+                    <div class="flex justify-between items-end">
+                        <div class="text-left">
+                            <div class="w-20 h-0.5 bg-gray-400 mb-1"></div>
+                            <p class="text-xs text-gray-600">Vibe Coding App</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="w-20 h-0.5 bg-gray-400 mb-1"></div>
+                            <p class="text-xs text-gray-600">认证编号: VC2024001</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 丝带装饰 -->
+                <div class="absolute top-4 right-4 ribbon text-white px-3 py-1 rounded-full transform rotate-12">
+                    <span class="text-xs font-bold">NEW</span>
+                </div>
+            </div>
+            
+            <!-- 操作按钮 -->
+            <div class="flex space-x-3 mt-4">
+                <button class="flex-1 bg-blue-600 text-white py-3 rounded-2xl font-semibold">
+                    <i class="fas fa-download mr-2"></i>保存到相册
+                </button>
+                <button class="flex-1 bg-green-600 text-white py-3 rounded-2xl font-semibold">
+                    <i class="fas fa-share mr-2"></i>分享证书
+                </button>
+            </div>
+        </div>
+
+        <!-- 证书列表 -->
+        <div class="flex-1 px-6 pb-24 overflow-y-auto">
+            <h2 class="text-lg font-bold text-gray-800 mb-4">📚 所有证书</h2>
+            
+            <!-- 章节证书 -->
+            <div class="space-y-3">
+                <div class="bg-white rounded-2xl p-4 card-shadow">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-yellow-600 font-bold">1</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800">第1章：视频编码基础概念</h4>
+                            <p class="text-sm text-gray-500">完成时间：2024年1月10日</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-eye text-blue-600 text-sm"></i>
+                            </button>
+                            <button class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-share text-green-600 text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-4 card-shadow">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-yellow-600 font-bold">2</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800">第2章：数字视频基础</h4>
+                            <p class="text-sm text-gray-500">完成时间：2024年1月11日</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-eye text-blue-600 text-sm"></i>
+                            </button>
+                            <button class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-share text-green-600 text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-4 card-shadow">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-yellow-600 font-bold">3</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800">第3章：视频压缩原理</h4>
+                            <p class="text-sm text-gray-500">完成时间：2024年1月12日</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-eye text-blue-600 text-sm"></i>
+                            </button>
+                            <button class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-share text-green-600 text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-4 card-shadow">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-yellow-600 font-bold">4</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800">第4章：H.264/AVC 标准</h4>
+                            <p class="text-sm text-gray-500">完成时间：2024年1月13日</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-eye text-blue-600 text-sm"></i>
+                            </button>
+                            <button class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-share text-green-600 text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-4 card-shadow">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-yellow-600 font-bold">5</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800">第5章：H.265/HEVC 标准详解</h4>
+                            <p class="text-sm text-gray-500">完成时间：2024年1月15日</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-eye text-blue-600 text-sm"></i>
+                            </button>
+                            <button class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-share text-green-600 text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 未获得的证书 -->
+                <div class="bg-gray-100 rounded-2xl p-4 opacity-60">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-lock text-gray-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-600">第6章：VP9 & AV1 新一代编码</h4>
+                            <p class="text-sm text-gray-400">完成章节后可获得证书</p>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                            <i class="fas fa-lock text-gray-400 text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 完成证书预览 -->
+            <div class="mt-8">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">🏆 完成证书</h3>
+                <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-4 border-2 border-dashed border-purple-300">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-crown text-purple-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">Vibe Coding 专家证书</h4>
+                        <p class="text-sm text-gray-600 mb-4">完成全部13章学习后获得</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 38%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">进度：5/13 章节 (38%)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 safe-area-bottom">
+            <div class="grid grid-cols-4 h-40 py-4">
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-home text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">首页</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-book text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">章节</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-trophy text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">成就</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-user text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">我的</span>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+</body>
+</html>

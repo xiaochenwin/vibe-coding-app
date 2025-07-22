@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        .tab-bar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 主内容区域 -->
+    <div class="flex flex-col h-screen">
+        <!-- 头部欢迎区域 -->
+        <div class="gradient-bg text-white p-6 pb-8">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h1 class="text-2xl font-bold">早上好！👋</h1>
+                    <p class="text-blue-100 text-sm">继续你的Vibe Coding学习之旅</p>
+                </div>
+                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-user text-white text-lg"></i>
+                </div>
+            </div>
+            
+            <!-- 学习进度卡片 -->
+            <div class="bg-white bg-opacity-10 rounded-2xl p-4 backdrop-blur-sm">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold mb-1">总体进度</h3>
+                        <p class="text-blue-100 text-sm mb-2">已完成 5/13 章节</p>
+                        <div class="w-full bg-white bg-opacity-20 rounded-full h-2">
+                            <div class="bg-orange-400 h-2 rounded-full" style="width: 38%"></div>
+                        </div>
+                        <p class="text-xs text-blue-100 mt-1">38% 完成</p>
+                    </div>
+                    <div class="ml-4">
+                        <div class="relative w-16 h-16">
+                            <svg class="progress-ring w-16 h-16" viewBox="0 0 36 36">
+                                <path class="text-white text-opacity-20" stroke="currentColor" stroke-width="3" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="text-orange-400" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="38, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">38%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 快速操作区域 -->
+        <div class="flex-1 p-6 pb-24">
+            <!-- 继续学习 -->
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">继续学习</h2>
+                <div class="bg-white rounded-2xl p-4 card-shadow">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold text-lg">6</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800">第6章: VP9 和 AV1 编码</h3>
+                            <p class="text-gray-500 text-sm">上次阅读: 2分钟前</p>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 mt-2">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 23%"></div>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 今日统计 -->
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">今日统计</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">学习时长</p>
+                                <p class="text-2xl font-bold text-gray-800">45</p>
+                                <p class="text-gray-500 text-xs">分钟</p>
+                            </div>
+                            <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-clock text-green-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 card-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">连续天数</p>
+                                <p class="text-2xl font-bold text-gray-800">7</p>
+                                <p class="text-gray-500 text-xs">天</p>
+                            </div>
+                            <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-fire text-orange-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 最新成就 -->
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">最新成就 🏆</h2>
+                <div class="bg-white rounded-2xl p-4 card-shadow">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-medal text-yellow-600 text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800">连续学习一周</h3>
+                            <p class="text-gray-500 text-sm">恭喜你坚持学习7天！</p>
+                        </div>
+                        <span class="text-xs text-gray-400">刚刚</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 safe-area-bottom">
+            <div class="grid grid-cols-4 h-40 py-4">
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-home text-blue-600 text-2xl"></i>
+                    <span class="text-sm text-blue-600 font-medium">首页</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-book text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">章节</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-trophy text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">成就</span>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <i class="fas fa-user text-gray-400 text-2xl"></i>
+                    <span class="text-sm text-gray-400">我的</span>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+</body>
+</html>
